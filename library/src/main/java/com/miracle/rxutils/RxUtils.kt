@@ -109,7 +109,6 @@ object RxUtils {
                     .toObservable()
                     .doOnDispose(Action {
                         Log.d(TAG, "serialExecute() dispose")
-                        callBack.dispose()
                     })
                     .observeOn(AndroidSchedulers.mainThread())
                     .compose(bindToLifecycle)
@@ -149,7 +148,6 @@ object RxUtils {
     interface ResultCallBack {
         fun onSuccess()
         fun onError(e: Throwable)
-        fun dispose()
     }
 
     interface TimerCallBack {

@@ -5,23 +5,16 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import androidx.lifecycle.Lifecycle;
 
 import com.miracle.rxutils.RxUtils;
-import com.trello.lifecycle4.android.lifecycle.AndroidLifecycle;
 import com.trello.rxlifecycle4.android.ActivityEvent;
 import com.trello.rxlifecycle4.components.support.RxAppCompatActivity;
-import com.uber.autodispose.AutoDispose;
-import com.uber.autodispose.AutoDisposeConverter;
-import com.uber.autodispose.android.lifecycle.AndroidLifecycleScopeProvider;
 
 import org.jetbrains.annotations.NotNull;
 
 
-import java.util.Timer;
 import java.util.concurrent.TimeUnit;
 
-import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.ObservableEmitter;
 import io.reactivex.rxjava3.core.ObservableOnSubscribe;
@@ -41,7 +34,6 @@ public class MainActivity extends RxAppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initObservable();
-
 
     }
 
@@ -87,11 +79,6 @@ public class MainActivity extends RxAppCompatActivity {
     public void parallelExecute(View view) {
         RxUtils.INSTANCE.parallelExecute(new Observable[]{observable1, observable2, observable3}, bindToLifecycle(), new RxUtils.ResultCallBack() {
             @Override
-            public void dispose() {
-
-            }
-
-            @Override
             public void onSuccess() {
                 Log.i(TAG, "所有事件并行 执行完毕");
             }
@@ -118,11 +105,6 @@ public class MainActivity extends RxAppCompatActivity {
 
     public void oneByOne(View view) {
         RxUtils.INSTANCE.serialExecute(new Observable[]{observable1, observable2, observable3}, bindToLifecycle(), new RxUtils.ResultCallBack() {
-            @Override
-            public void dispose() {
-
-            }
-
             @Override
             public void onSuccess() {
                 Log.i(TAG, "所有事件依次 执行完毕");

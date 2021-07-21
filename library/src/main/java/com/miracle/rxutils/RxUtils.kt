@@ -35,9 +35,8 @@ object RxUtils {
      */
     fun countDownTimer(duration: Long, timeUnit: TimeUnit, bindToLifecycle: LifecycleTransformer<Long>, callBack: TimerCallBack) {
         Observable.intervalRange(1, duration, 1, 1, timeUnit)
-                .compose(bindToLifecycle)
                 .doOnDispose {
-                    Log.d(TAG, "timer dispose")
+                    Log.d(TAG, "countDownTimer dispose")
                 }
                 .doOnSubscribe {
                     callBack.onStart()
@@ -45,6 +44,7 @@ object RxUtils {
                 .doOnComplete {
                     callBack.onFinish()
                 }
+                .compose(bindToLifecycle)
                 .subscribe {
                     callBack.onNext(it)
                 }
@@ -68,8 +68,11 @@ object RxUtils {
     fun timer(intervalTime: Long, frequency: Long, timeUnit: TimeUnit, bindToLifecycle: LifecycleTransformer<Long>, callBack: TimerCallBack) {
         Observable.interval(intervalTime, intervalTime, timeUnit)
                 .take(frequency)
-                .compose(bindToLifecycle)
                 .observeOn(AndroidSchedulers.mainThread())
+                .doOnDispose {
+                    Log.d(TAG, "timer dispose")
+                }
+                .compose(bindToLifecycle)
                 .subscribe(object : Observer<Long> {
                     override fun onSubscribe(d: Disposable?) {
                         callBack.onStart()
@@ -108,8 +111,8 @@ object RxUtils {
                         Log.d(TAG, "serialExecute() dispose")
                         callBack.dispose()
                     })
-                    .compose(bindToLifecycle)
                     .observeOn(AndroidSchedulers.mainThread())
+                    .compose(bindToLifecycle)
                     .subscribe({
                         callBack.onSuccess()
                     }, {
@@ -130,10 +133,10 @@ object RxUtils {
                     }.toList()
                     .toObservable()
                     .doOnDispose(Action {
-                        Log.d(TAG, "serialExecute() dispose")
+                        Log.d(TAG, "parallelExecute() dispose")
                     })
-                    .compose(bindToLifecycle)
                     .observeOn(AndroidSchedulers.mainThread())
+                    .compose(bindToLifecycle)
                     .subscribe({
                         callBack.onSuccess()
                     }, {

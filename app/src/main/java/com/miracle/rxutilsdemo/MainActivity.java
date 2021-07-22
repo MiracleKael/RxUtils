@@ -6,9 +6,9 @@ import android.util.Log;
 import android.view.View;
 
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.miracle.rxutils.RxUtils;
-import com.trello.rxlifecycle4.android.ActivityEvent;
-import com.trello.rxlifecycle4.components.support.RxAppCompatActivity;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -19,10 +19,8 @@ import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.ObservableEmitter;
 import io.reactivex.rxjava3.core.ObservableOnSubscribe;
 import io.reactivex.rxjava3.functions.Action;
-import io.reactivex.rxjava3.functions.Consumer;
-import io.reactivex.rxjava3.functions.Function;
 
-public class MainActivity extends RxAppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     private Observable<String> observable1;
@@ -34,12 +32,11 @@ public class MainActivity extends RxAppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initObservable();
-
     }
 
 
     public void timer(View view) {
-        RxUtils.INSTANCE.timer(1, 10, bindUntilEvent(ActivityEvent.DESTROY), new RxUtils.TimerCallBack() {
+        RxUtils.INSTANCE.timer(1, 10, TimeUnit.SECONDS,this, new RxUtils.TimerCallBack() {
             @Override
             public void onStart() {
                 Log.i(TAG, "time== " + "onStart");
@@ -58,7 +55,7 @@ public class MainActivity extends RxAppCompatActivity {
     }
 
     public void countDownTimer(View view) {
-        RxUtils.INSTANCE.countDownTimer(10, bindUntilEvent(ActivityEvent.DESTROY), new RxUtils.TimerCallBack() {
+        RxUtils.INSTANCE.countDownTimer(10, TimeUnit.SECONDS,this, new RxUtils.TimerCallBack() {
             @Override
             public void onStart() {
                 Log.i(TAG, "countDownTimer== " + "onStart");
@@ -77,7 +74,7 @@ public class MainActivity extends RxAppCompatActivity {
     }
 
     public void parallelExecute(View view) {
-        RxUtils.INSTANCE.parallelExecute(new Observable[]{observable1, observable2, observable3}, bindToLifecycle(), new RxUtils.ResultCallBack() {
+        RxUtils.INSTANCE.parallelExecute(new Observable[]{observable1, observable2, observable3}, this, new RxUtils.ResultCallBack() {
             @Override
             public void onSuccess() {
                 Log.i(TAG, "所有事件并行 执行完毕");
@@ -88,23 +85,10 @@ public class MainActivity extends RxAppCompatActivity {
                 Log.i(TAG, "所有事件并行 执行失败");
             }
         });
-
-        Observable.interval(0, 1, TimeUnit.SECONDS).map(new Function<Long, Long>() {
-            @Override
-            public Long apply(Long aLong) throws Throwable {
-                return aLong + 1;
-            }
-        }).subscribe(new Consumer<Long>() {
-            @Override
-            public void accept(Long aLong) throws Throwable {
-
-            }
-        });
-
     }
 
     public void oneByOne(View view) {
-        RxUtils.INSTANCE.serialExecute(new Observable[]{observable1, observable2, observable3}, bindToLifecycle(), new RxUtils.ResultCallBack() {
+        RxUtils.INSTANCE.serialExecute(new Observable[]{observable1, observable2, observable3}, this, new RxUtils.ResultCallBack() {
             @Override
             public void onSuccess() {
                 Log.i(TAG, "所有事件依次 执行完毕");

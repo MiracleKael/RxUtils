@@ -1,39 +1,92 @@
 # compiler: R8
 # compiler_version: 2.2.71
-# pg_map_id: 67f75e4
+# pg_map_id: 191d662
 # common_typos_disable
 com.miracle.rxutils.RxUtils -> com.miracle.rxutils.RxUtils:
 # {"id":"sourceFile","fileName":"RxUtils.kt"}
-    1:1:void <init>():18:18 -> <init>
-    1:1:void countDownTimer(long,com.trello.rxlifecycle4.LifecycleTransformer,com.miracle.rxutils.RxUtils$TimerCallBack):27:27 -> countDownTimer
-    2:13:void countDownTimer(long,java.util.concurrent.TimeUnit,com.trello.rxlifecycle4.LifecycleTransformer,com.miracle.rxutils.RxUtils$TimerCallBack):37:48 -> countDownTimer
-    1:1:void countDownTimer$lambda-0():40:40 -> countDownTimer$lambda-0
-    1:1:void countDownTimer$lambda-1(com.miracle.rxutils.RxUtils$TimerCallBack,io.reactivex.rxjava3.disposables.Disposable):43:43 -> countDownTimer$lambda-1
-    1:1:void countDownTimer$lambda-2(com.miracle.rxutils.RxUtils$TimerCallBack):46:46 -> countDownTimer$lambda-2
-    1:1:void countDownTimer$lambda-3(com.miracle.rxutils.RxUtils$TimerCallBack,java.lang.Long):49:49 -> countDownTimer$lambda-3
-    1:14:void parallelExecute(io.reactivex.rxjava3.core.Observable[],com.trello.rxlifecycle4.LifecycleTransformer,com.miracle.rxutils.RxUtils$ResultCallBack):126:139 -> parallelExecute
-    15:15:void parallelExecute(io.reactivex.rxjava3.core.Observable[],com.trello.rxlifecycle4.LifecycleTransformer,com.miracle.rxutils.RxUtils$ResultCallBack):137:137 -> parallelExecute
-    1:1:void parallelExecute$lambda-10(com.miracle.rxutils.RxUtils$ResultCallBack,java.lang.Object):138:138 -> parallelExecute$lambda-10
-    1:1:void parallelExecute$lambda-11(com.miracle.rxutils.RxUtils$ResultCallBack,java.lang.Throwable):140:140 -> parallelExecute$lambda-11
-    1:1:io.reactivex.rxjava3.core.ObservableSource parallelExecute$lambda-8(io.reactivex.rxjava3.core.Observable):129:129 -> parallelExecute$lambda-8
-    1:1:void parallelExecute$lambda-9():133:133 -> parallelExecute$lambda-9
-    1:16:void serialExecute(io.reactivex.rxjava3.core.Observable[],com.trello.rxlifecycle4.LifecycleTransformer,com.miracle.rxutils.RxUtils$ResultCallBack):100:115 -> serialExecute
-    17:17:void serialExecute(io.reactivex.rxjava3.core.Observable[],com.trello.rxlifecycle4.LifecycleTransformer,com.miracle.rxutils.RxUtils$ResultCallBack):113:113 -> serialExecute
-    1:1:io.reactivex.rxjava3.core.ObservableSource serialExecute$lambda-4(io.reactivex.rxjava3.core.Observable):104:104 -> serialExecute$lambda-4
-    1:2:void serialExecute$lambda-5(com.miracle.rxutils.RxUtils$ResultCallBack):108:109 -> serialExecute$lambda-5
-    1:1:void serialExecute$lambda-6(com.miracle.rxutils.RxUtils$ResultCallBack,java.lang.Object):114:114 -> serialExecute$lambda-6
-    1:1:void serialExecute$lambda-7(com.miracle.rxutils.RxUtils$ResultCallBack,java.lang.Throwable):116:116 -> serialExecute$lambda-7
-    1:1:void timer(long,long,com.trello.rxlifecycle4.LifecycleTransformer,com.miracle.rxutils.RxUtils$TimerCallBack):59:59 -> timer
-    2:6:void timer(long,long,java.util.concurrent.TimeUnit,com.trello.rxlifecycle4.LifecycleTransformer,com.miracle.rxutils.RxUtils$TimerCallBack):69:73 -> timer
+    1:1:void <init>():19:19 -> <init>
+    1:12:void countDownTimer(long,java.util.concurrent.TimeUnit,android.view.View,com.miracle.rxutils.RxUtils$TimerCallBack):29:40 -> countDownTimer
+    13:24:void countDownTimer(long,java.util.concurrent.TimeUnit,com.rxjava.rxlife.Scope,com.miracle.rxutils.RxUtils$TimerCallBack):46:57 -> countDownTimer
+    25:36:void countDownTimer(long,java.util.concurrent.TimeUnit,androidx.lifecycle.LifecycleOwner,com.miracle.rxutils.RxUtils$TimerCallBack):63:74 -> countDownTimer
+    1:1:void countDownTimer$lambda-0():31:31 -> countDownTimer$lambda-0
+    1:1:void countDownTimer$lambda-1(com.miracle.rxutils.RxUtils$TimerCallBack,io.reactivex.rxjava3.disposables.Disposable):34:34 -> countDownTimer$lambda-1
+    1:1:void countDownTimer$lambda-10(com.miracle.rxutils.RxUtils$TimerCallBack):71:71 -> countDownTimer$lambda-10
+    1:1:void countDownTimer$lambda-11(com.miracle.rxutils.RxUtils$TimerCallBack,java.lang.Long):75:75 -> countDownTimer$lambda-11
+    1:1:void countDownTimer$lambda-2(com.miracle.rxutils.RxUtils$TimerCallBack):37:37 -> countDownTimer$lambda-2
+    1:1:void countDownTimer$lambda-3(com.miracle.rxutils.RxUtils$TimerCallBack,java.lang.Long):41:41 -> countDownTimer$lambda-3
+    1:1:void countDownTimer$lambda-4():48:48 -> countDownTimer$lambda-4
+    1:1:void countDownTimer$lambda-5(com.miracle.rxutils.RxUtils$TimerCallBack,io.reactivex.rxjava3.disposables.Disposable):51:51 -> countDownTimer$lambda-5
+    1:1:void countDownTimer$lambda-6(com.miracle.rxutils.RxUtils$TimerCallBack):54:54 -> countDownTimer$lambda-6
+    1:1:void countDownTimer$lambda-7(com.miracle.rxutils.RxUtils$TimerCallBack,java.lang.Long):58:58 -> countDownTimer$lambda-7
+    1:1:void countDownTimer$lambda-8():65:65 -> countDownTimer$lambda-8
+    1:1:void countDownTimer$lambda-9(com.miracle.rxutils.RxUtils$TimerCallBack,io.reactivex.rxjava3.disposables.Disposable):68:68 -> countDownTimer$lambda-9
+    1:14:void parallelExecute(io.reactivex.rxjava3.core.Observable[],android.view.View,com.miracle.rxutils.RxUtils$ResultCallBack):267:280 -> parallelExecute
+    15:15:void parallelExecute(io.reactivex.rxjava3.core.Observable[],android.view.View,com.miracle.rxutils.RxUtils$ResultCallBack):278:278 -> parallelExecute
+    16:29:void parallelExecute(io.reactivex.rxjava3.core.Observable[],com.rxjava.rxlife.Scope,com.miracle.rxutils.RxUtils$ResultCallBack):291:304 -> parallelExecute
+    30:30:void parallelExecute(io.reactivex.rxjava3.core.Observable[],com.rxjava.rxlife.Scope,com.miracle.rxutils.RxUtils$ResultCallBack):302:302 -> parallelExecute
+    31:44:void parallelExecute(io.reactivex.rxjava3.core.Observable[],androidx.lifecycle.LifecycleOwner,com.miracle.rxutils.RxUtils$ResultCallBack):315:328 -> parallelExecute
+    45:45:void parallelExecute(io.reactivex.rxjava3.core.Observable[],androidx.lifecycle.LifecycleOwner,com.miracle.rxutils.RxUtils$ResultCallBack):326:326 -> parallelExecute
+    1:1:io.reactivex.rxjava3.core.ObservableSource parallelExecute$lambda-27(io.reactivex.rxjava3.core.Observable):270:270 -> parallelExecute$lambda-27
+    1:1:void parallelExecute$lambda-28():274:274 -> parallelExecute$lambda-28
+    1:1:void parallelExecute$lambda-29(com.miracle.rxutils.RxUtils$ResultCallBack,java.util.List):279:279 -> parallelExecute$lambda-29
+    1:1:void parallelExecute$lambda-30(com.miracle.rxutils.RxUtils$ResultCallBack,java.lang.Throwable):281:281 -> parallelExecute$lambda-30
+    1:1:io.reactivex.rxjava3.core.ObservableSource parallelExecute$lambda-31(io.reactivex.rxjava3.core.Observable):294:294 -> parallelExecute$lambda-31
+    1:1:void parallelExecute$lambda-32():298:298 -> parallelExecute$lambda-32
+    1:1:void parallelExecute$lambda-33(com.miracle.rxutils.RxUtils$ResultCallBack,java.util.List):303:303 -> parallelExecute$lambda-33
+    1:1:void parallelExecute$lambda-34(com.miracle.rxutils.RxUtils$ResultCallBack,java.lang.Throwable):305:305 -> parallelExecute$lambda-34
+    1:1:io.reactivex.rxjava3.core.ObservableSource parallelExecute$lambda-35(io.reactivex.rxjava3.core.Observable):318:318 -> parallelExecute$lambda-35
+    1:1:void parallelExecute$lambda-36():322:322 -> parallelExecute$lambda-36
+    1:1:void parallelExecute$lambda-37(com.miracle.rxutils.RxUtils$ResultCallBack,java.util.List):327:327 -> parallelExecute$lambda-37
+    1:1:void parallelExecute$lambda-38(com.miracle.rxutils.RxUtils$ResultCallBack,java.lang.Throwable):329:329 -> parallelExecute$lambda-38
+    1:15:void serialExecute(io.reactivex.rxjava3.core.Observable[],android.view.View,com.miracle.rxutils.RxUtils$ResultCallBack):192:206 -> serialExecute
+    16:16:void serialExecute(io.reactivex.rxjava3.core.Observable[],android.view.View,com.miracle.rxutils.RxUtils$ResultCallBack):204:204 -> serialExecute
+    17:31:void serialExecute(io.reactivex.rxjava3.core.Observable[],com.rxjava.rxlife.Scope,com.miracle.rxutils.RxUtils$ResultCallBack):217:231 -> serialExecute
+    32:32:void serialExecute(io.reactivex.rxjava3.core.Observable[],com.rxjava.rxlife.Scope,com.miracle.rxutils.RxUtils$ResultCallBack):229:229 -> serialExecute
+    33:47:void serialExecute(io.reactivex.rxjava3.core.Observable[],androidx.lifecycle.LifecycleOwner,com.miracle.rxutils.RxUtils$ResultCallBack):242:256 -> serialExecute
+    48:48:void serialExecute(io.reactivex.rxjava3.core.Observable[],androidx.lifecycle.LifecycleOwner,com.miracle.rxutils.RxUtils$ResultCallBack):254:254 -> serialExecute
+    1:1:io.reactivex.rxjava3.core.ObservableSource serialExecute$lambda-15(io.reactivex.rxjava3.core.Observable):196:196 -> serialExecute$lambda-15
+    1:1:void serialExecute$lambda-16():200:200 -> serialExecute$lambda-16
+    1:1:void serialExecute$lambda-17(com.miracle.rxutils.RxUtils$ResultCallBack,java.util.List):205:205 -> serialExecute$lambda-17
+    1:1:void serialExecute$lambda-18(com.miracle.rxutils.RxUtils$ResultCallBack,java.lang.Throwable):207:207 -> serialExecute$lambda-18
+    1:1:io.reactivex.rxjava3.core.ObservableSource serialExecute$lambda-19(io.reactivex.rxjava3.core.Observable):221:221 -> serialExecute$lambda-19
+    1:1:void serialExecute$lambda-20():225:225 -> serialExecute$lambda-20
+    1:1:void serialExecute$lambda-21(com.miracle.rxutils.RxUtils$ResultCallBack,java.util.List):230:230 -> serialExecute$lambda-21
+    1:1:void serialExecute$lambda-22(com.miracle.rxutils.RxUtils$ResultCallBack,java.lang.Throwable):232:232 -> serialExecute$lambda-22
+    1:1:io.reactivex.rxjava3.core.ObservableSource serialExecute$lambda-23(io.reactivex.rxjava3.core.Observable):246:246 -> serialExecute$lambda-23
+    1:1:void serialExecute$lambda-24():250:250 -> serialExecute$lambda-24
+    1:1:void serialExecute$lambda-25(com.miracle.rxutils.RxUtils$ResultCallBack,java.util.List):255:255 -> serialExecute$lambda-25
+    1:1:void serialExecute$lambda-26(com.miracle.rxutils.RxUtils$ResultCallBack,java.lang.Throwable):257:257 -> serialExecute$lambda-26
+    1:8:void timer(long,long,java.util.concurrent.TimeUnit,android.view.View,com.miracle.rxutils.RxUtils$TimerCallBack):86:93 -> timer
+    9:16:void timer(long,long,java.util.concurrent.TimeUnit,com.rxjava.rxlife.Scope,com.miracle.rxutils.RxUtils$TimerCallBack):122:129 -> timer
+    17:24:void timer(long,long,java.util.concurrent.TimeUnit,androidx.lifecycle.LifecycleOwner,com.miracle.rxutils.RxUtils$TimerCallBack):158:165 -> timer
+    1:1:void timer$lambda-12():90:90 -> timer$lambda-12
+    1:1:void timer$lambda-13():126:126 -> timer$lambda-13
+    1:1:void timer$lambda-14():162:162 -> timer$lambda-14
 com.miracle.rxutils.RxUtils$ResultCallBack -> com.miracle.rxutils.RxUtils$ResultCallBack:
 # {"id":"sourceFile","fileName":"RxUtils.kt"}
 com.miracle.rxutils.RxUtils$TimerCallBack -> com.miracle.rxutils.RxUtils$TimerCallBack:
 # {"id":"sourceFile","fileName":"RxUtils.kt"}
-com.miracle.rxutils.RxUtils$timer$1 -> com.miracle.rxutils.RxUtils$timer$1:
+com.miracle.rxutils.RxUtils$timer$2 -> com.miracle.rxutils.RxUtils$timer$2:
 # {"id":"sourceFile","fileName":"RxUtils.kt"}
-    1:1:void <init>(com.miracle.rxutils.RxUtils$TimerCallBack):73:73 -> <init>
-    1:1:void onComplete():90:90 -> onComplete
-    1:2:void onError(java.lang.Throwable):85:86 -> onError
-    1:1:void onNext(java.lang.Object):73:73 -> onNext
-    2:2:void onNext(java.lang.Long):80:80 -> onNext
-    1:1:void onSubscribe(io.reactivex.rxjava3.disposables.Disposable):75:75 -> onSubscribe
+    1:1:void <init>(com.miracle.rxutils.RxUtils$TimerCallBack):93:93 -> <init>
+    1:1:void onComplete():110:110 -> onComplete
+    1:2:void onError(java.lang.Throwable):105:106 -> onError
+    1:1:void onNext(java.lang.Object):93:93 -> onNext
+    2:2:void onNext(java.lang.Long):100:100 -> onNext
+    1:1:void onSubscribe(io.reactivex.rxjava3.disposables.Disposable):95:95 -> onSubscribe
+com.miracle.rxutils.RxUtils$timer$4 -> com.miracle.rxutils.RxUtils$timer$4:
+# {"id":"sourceFile","fileName":"RxUtils.kt"}
+    1:1:void <init>(com.miracle.rxutils.RxUtils$TimerCallBack):129:129 -> <init>
+    1:1:void onComplete():146:146 -> onComplete
+    1:2:void onError(java.lang.Throwable):141:142 -> onError
+    1:1:void onNext(java.lang.Object):129:129 -> onNext
+    2:2:void onNext(java.lang.Long):136:136 -> onNext
+    1:1:void onSubscribe(io.reactivex.rxjava3.disposables.Disposable):131:131 -> onSubscribe
+com.miracle.rxutils.RxUtils$timer$6 -> com.miracle.rxutils.RxUtils$timer$6:
+# {"id":"sourceFile","fileName":"RxUtils.kt"}
+    1:1:void <init>(com.miracle.rxutils.RxUtils$TimerCallBack):165:165 -> <init>
+    1:1:void onComplete():182:182 -> onComplete
+    1:2:void onError(java.lang.Throwable):177:178 -> onError
+    1:1:void onNext(java.lang.Object):165:165 -> onNext
+    2:2:void onNext(java.lang.Long):172:172 -> onNext
+    1:1:void onSubscribe(io.reactivex.rxjava3.disposables.Disposable):167:167 -> onSubscribe

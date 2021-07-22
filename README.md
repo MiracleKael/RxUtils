@@ -4,6 +4,8 @@
 
 **Rxjava3！**
 
+目前只适用于Rxjava3的工具类，帮助开发者快速串行执行多任务，并行执行多任务的，以及间隔计时器，倒计时器
+
 #### 1.How to use
 
 **Step 1.** Add the JitPack repository to your build file
@@ -88,7 +90,86 @@ public class MainPresenter extends BaseScope {
 
 #### 2.Method description
 
+1.倒计时器
+
+```
+fun countDownTimer(duration: Long, timeUnit: TimeUnit, view: View, callBack: TimerCallBack) {
+```
+
+```
+fun countDownTimer(duration: Long, timeUnit: TimeUnit, scope: Scope, callBack: TimerCallBack) {
+```
+
+```
+fun countDownTimer(duration: Long, timeUnit: TimeUnit, lifecycleOwner: LifecycleOwner, callBack: TimerCallBack) {
+```
+
+duration:倒计时长
+
+timeUnit:时长单位
+
+scope:传入一个继承BaseScope的类即可
+
+lifecycleOwner：LifecycleOwner
 
 
 
+2.计时器
 
+```
+fun timer(intervalTime: Long, frequency: Long, timeUnit: TimeUnit, view: View, callBack: TimerCallBack) {
+```
+
+```
+fun timer(intervalTime: Long, frequency: Long, timeUnit: TimeUnit, scope: Scope, callBack: TimerCallBack) {
+```
+
+```
+fun timer(intervalTime: Long, frequency: Long, timeUnit: TimeUnit, lifecycleOwner: LifecycleOwner, callBack: TimerCallBack) {
+```
+
+intervalTime：间隔时长
+
+frequency：执行次数
+
+timeUnit：时长单位
+
+
+
+3.多任务串行执行：
+
+```
+fun serialExecute(vararg args: Observable<*>?, view: View, callBack: ResultCallBack) {
+```
+
+```
+fun serialExecute(vararg args: Observable<*>?, scope: Scope, callBack: ResultCallBack) {
+```
+
+```
+fun serialExecute(vararg args: Observable<*>?, lifecycleOwner: LifecycleOwner, callBack: ResultCallBack) {
+```
+
+args：可变参数，传入数个任务Observable的数组即可
+
+只有任务都完成了，才会返回onSuccess()
+
+
+
+4.多任务并行执行
+
+```
+fun parallelExecute(vararg args: Observable<*>?, view: View, callBack: ResultCallBack) {
+```
+
+```
+fun parallelExecute(vararg args: Observable<*>?, scope: Scope, callBack: ResultCallBack) {
+```
+
+```
+fun parallelExecute(vararg args: Observable<*>?, lifecycleOwner: LifecycleOwner, callBack: ResultCallBack) {
+```
+
+args：可变参数，传入数个任务Observable的数组即可
+
+只有任务都完成了，才会返回onSuccess()
